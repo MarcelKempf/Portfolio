@@ -1,0 +1,48 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Marcel Kempf",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-inject": "^4.3.2",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "node-sass": "^4.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcelKempf/Portfolio.git"
+  },
+  "keywords": [
+    "Web-Development",
+    "Frontend",
+    "Gallery",
+    "Who am I"
+  ],
+  "author": "Marcel Kempf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcelKempf/Portfolio/issues"
+  },
+  "homepage": "https://github.com/MarcelKempf/Portfolio#readme"
+}
