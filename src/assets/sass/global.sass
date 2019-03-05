@@ -1,50 +1,224 @@
 @import var
 
 /* ########################################
-    Global style for every page on the website
+      Global style for every page on the website
 /*
 
-body
+
+body:fullscreen
+  animation: fadeIn 500ms ease normal alternate
+
+body:fullscreen #background
+  display: block
+
+html, body
   padding: 0
   margin: 0
-  background-color: $firstBackground
+  height: 100%
+  width: 100%
   font-size: 16px
-  color: $fontColor
-
-#content
-  margin: 0 auto
-  max-width: 1200px
-  height: 100vh
-  background-color: $secondBackground
   position: relative
+  font-family: "Segoe UI", sans-serif
+  color: $fontColor
+  background-color: $firstBackground
 
-  #introduction
-    font-family: sans-serif
-    position: relative
-    left: 10%
-    top: 7%
-    width: 80%
+  .align
+    text-align: center
+    margin: 0
 
-    h1, h2
-      margin: .2rem
-      width: 100%
+  .header
+    width: 100vw
 
-    h2
-      font-size: 1.2rem
-      font-weight: 400
+    .upperSection
+      height: 45px
+      padding: 25px 40px
 
-    div
-      display: flex
+      #mailMe img
+        height: 150px
+        margin: 7.5px 0
 
-    img
-      width: 130%
+      .languageSelect
+        float: right
 
-  #navigation
-    position: relative
+        #flagDE, #flagUK
+          width: auto
+          height: 25px
+          margin: 10px 10px
+          cursor: pointer
+          box-shadow: 1px 3px 10px 0px $fontColor
+
+        #flagDE.picked, #flagUK.picked
+          transform: scale(1.2)
+
+        .flagSlash
+          display: inline-block
+          background-color: $fontColor
+          width: 3px
+          height: 45px
+          transform: rotate(7deg)
+
+    #titleHeader
+      text-align: center
+      font-size: 2.5rem
+      margin: 0 15px
+      color: $fontColor
+
+      .name
+        font-weight: 600
+
+    #typed
+      font-size: 2.5rem
+      font-weight: 700
+      color: #354858
+      overflow-wrap: break-word
+
+    .typed-cursor
+      font-size: 2.5rem
+
+
+  .overviewMenu
+    position: absolute
+    margin: 0 auto
+    bottom: 0
+    height: calc( 100% - 95px )
+    max-width: 1920px
+
+  #background
+    display: none
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    position: absolute
+    background-color: rgba(#222, .5)
+
+  .popUpSite
+    display: block
+    position: absolute
+    width: 130vh
+    top: 0
     left: 50%
-    transform: translateX(-50%) translateY(50%)
-    width: 50%
+    transform: translateX(-50%)
+    min-height: 85vh
+    margin: 35px 50px
+    border-radius: 0 0 5px 5px
+    box-shadow: 1px 3px 10px 0px $fontColor
+    background-color: white
+
+    .topicHeader
+      width: 100%
+      height: 75px
+      background-color: rgba(#68C3DE, .78)
+      border-radius: 0 0 8px 8px
+
+      .topicTitle
+        width: 90%
+        height: 100%
+        float: left
+        font-size: 2rem
+        text-align: center
+        margin: 0
+        padding: 15px 15px 15px calc(15px + 10%)
+        box-sizing: border-box
+
+      .r-col
+        width: 10%
+        height: 100%
+        float: right
+
+        &:hover
+          cursor: pointer
+
+        #closeSubPage
+          width: 35px
+          height: 35px
+          margin: 10px auto
+          padding: 10px
+          z-index: 100
+
+        .closePopUpSite
+          position: absolute
+          float: right
+          height: 30px
+          width: 2px
+          top: 22px
+          right: 37px
+          background-color: $fontColor
+
+          &:nth-child(1)
+            transform: rotate(45deg)
+
+          &:nth-child(2)
+            transform: rotate(-45deg)
+
+    .siteContent
+      padding: 10px
+      box-sizing: border-box
+
+    .siteContentPhoto
+      padding: 40px 80px
+
+      .photographyGrid
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-rows: 1fr 1fr 1fr
+        grid-template-areas: ". . ." ". . ." ". . ."
+        grid-gap: 70px
+        margin: 25px auto
+
+        .photography_imageItem
+          position: relative
+          background-color: #F9F9F9
+          animation: fadeInWobble 0.4s ease-out normal backwards
+
+          img
+            position: absolute
+            width: 100%
+            height: 100%
+
+          &::before
+            content: ""
+            display: inline-block
+            width: 1px
+            height: 0
+            padding-bottom: 100%
+
+          &:hover
+            transition: all 0.6s ease-in-out
+            transform: scale(1.15)
+
+
+        @for $i1 from 1 through 3
+          .imageItem#{$i1} { animation-delay: 200ms * $i1; }
+
+        @for $i2 from 4 through 6
+          .imageItem#{$i2} { animation-delay: 200ms * ( $i2 - 3 ) + 200ms; }
+
+        @for $i3 from 7 through 9
+          .imageItem#{$i3} { animation-delay: 200ms * ( $i3 - 6 ) + 400ms; }
+
+  .popUpSiteClose
+    display: none
+
+
+@keyframes fadeIn
+  from
+    transform: scale(0)
+
+  to
+    transform: scale(1)
+
+@keyframes fadeInWobble
+  0%
+    transform: scale(0)
+
+  70%
+    transform: scale(1.06)
+
+  100%
+    transform: scale(1)
+
 
 /* ########################################
-    Media Queries
+      Media Queries
 /*

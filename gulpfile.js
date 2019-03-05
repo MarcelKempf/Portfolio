@@ -58,6 +58,10 @@ gulp.task('js', function() {
           //.pipe(concat('global.js'))                      //Concat all files and name it
           .pipe(babel({
             presets: ['es2015'] }))                         //ES6 usable
+          .pipe(browserify({
+            insertGlobals: true,
+            debug: !gulp.env.production
+          }))
           .pipe(uglify())                                   //Minify into one line
           .pipe(rename({ suffix: '.min'}))                  //Add Suffix
       .pipe(sourcemaps.write('.'))                          //Sourcemap helps to find bugs

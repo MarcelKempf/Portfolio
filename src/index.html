@@ -11,6 +11,7 @@
     <meta name="owner" content="Marcel Kempf">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="google-site-verification" content="fjIweFKmTH_wcVM_aWsOfMWF4FojOOaJUh2QlwpECiw" />
     <meta name="google-analytics" content="..................................................."/>
 
     <meta name="og:title" content="Webdevelopment | Marcel Kempf"/>
@@ -31,19 +32,82 @@
     <meta name="msapplication-TileImage" content="/assets/images/Logo180x180.png">
 
     <link href="assets/css/global.min.css" rel="stylesheet">
+
   </head>
-  <body>
-    <section id="content">
-      <div id="introduction">
-        <div>
-          <h1>Marcel Kempf</h1>
-          <a href="mailto:marcel@familie-kempf.net" title="Email"><img src="assets/icons/mail.svg"/></a>
+  <body id="bodySection">
+    <!-- Header -->
+    <div class="header">
+      <div class="upperSection">
+        <a id="mailMe" href="mailto:marcel@familie-kempf.net" title="Email"><img src="assets/icons/mailMe.svg" alt="Write an email"/></a>
+        <div class="languageSelect">
+          <img id="flagDE" src="assets/icons/Flag_of_Germany.svg" title="German" alt="German" draggable="false">
+          <span class="flagSlash"></span>
+          <img id="flagUK" src="assets/icons/Flag_of_Britain.svg" title="English" alt="English" draggable="false">
         </div>
-        <h2>Free Web developer</h2>
+      </div>
+      <p class="align">
+        <span id="titleHeader"></span><span class="typed-animation" id="typed"></span>
+      </p>
+    </div>
+    <!-- Landingpage content (Menu,Background) -->
+    <div class="overviewMenu">
+
+
+    </div>
+    <!-- PopupBackground (only visible when a page is open)-->
+    <div id="background"></div>
+    <!-- Menupages (Photography, CV, Projects, Github, LinkedIn)-->
+    <div class="popUpSite" id="siteFullScreen">
+
+      <div class="topicHeader">
+        <h2 class="topicTitle" id="photography_TopicTitle"></h2>
+        <div class="r-col" id="close">
+          <div id="closeSubPage">
+            <span class="closePopUpSite"></span>
+            <span class="closePopUpSite"></span>
+          </div>
+        </div>
+      </div>
+      <div class="siteContent siteContentPhoto">
+
+        <div class="photographyGrid">
+          <div class="photography_imageItem imageItem1">
+            <img src="assets/images/Sunset_Lehrensteinsfeld.jpg" alt="Pic#1">
+          </div>
+          <div class="photography_imageItem imageItem2">
+            <img src="assets/images/" alt="Pic#2">
+          </div>
+          <div class="photography_imageItem imageItem3">
+            <img src="assets/images/" alt="Pic#3">
+          </div>
+          <div class="photography_imageItem imageItem4">
+            <img src="assets/images/" alt="Pic#4">
+          </div>
+          <div class="photography_imageItem imageItem5">
+            <img src="assets/images/" alt="Pic#5">
+          </div>
+          <div class="photography_imageItem imageItem6">
+            <img src="assets/images/" alt="Pic#6">
+          </div>
+          <div class="photography_imageItem imageItem7">
+            <img src="assets/images/" alt="Pic#7">
+          </div>
+          <div class="photography_imageItem imageItem8">
+            <img src="assets/images/" alt="Pic#8">
+          </div>
+          <div class="photography_imageItem imageItem9">
+            <img src="assets/images/" alt="Pic#9">
+          </div>
+        </div>
+
       </div>
 
-      <img id="navigation" src="assets/images/gearwheel.min.png" alt="Navigation"/>
 
-    </section>
+    </div>
+
+
+    <!-- Sitescripts -->
+    <script src="assets/js/function.min.js" charset="utf-8"></script>
+
   </body>
 </html>

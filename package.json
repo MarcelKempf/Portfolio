@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Portfolio of Marcel Kempf",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "typed.js": "^2.0.10"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
@@ -36,8 +38,7 @@
   "keywords": [
     "Web-Development",
     "Frontend",
-    "Gallery",
-    "Who am I"
+    "Photography"
   ],
   "author": "Marcel Kempf",
   "license": "ISC",
