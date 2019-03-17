@@ -6,5 +6,37 @@
   "photography_TopicTitle": {
     "de": "Fotografie",
     "en": "Photography"
+  },
+  "projects_TopicTitle": {
+    "de": "Projekte",
+    "en": "Projects"
+  },
+  "resume_TopicTitle": {
+    "de": "Lebenslauf",
+    "en": "CV"
+  },
+  "menuTitle_cv": {
+    "de": "Lebenslauf",
+    "en": "CV"
+  },
+  "menuTitle_projects": {
+    "de": "Projekte",
+    "en": "Projects"
+  },
+  "menuTitle_photography": {
+    "de": "Fotografie",
+    "en": "Photography"
+  },
+  "menuTitle_github": {
+    "de": "GitHub",
+    "en": "GitHub"
+  },
+  "menuTitle_linkedin": {
+    "de": "LinkedIn",
+    "en": "LinkedIn"
+  },
+  "resume_Pdf": {
+    "de": "<object id='cv' data='CVMarcel_DE.pdf'></object>",
+    "en": "<object id='cv' data='CVMarcel_EN.pdf'></object>"
   }
 }

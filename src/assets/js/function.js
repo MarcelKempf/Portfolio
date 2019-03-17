@@ -6,14 +6,15 @@ import Typed from 'typed.js';
 
 let pickEnglish = document.getElementById("flagUK");
 let pickGerman = document.getElementById("flagDE");
-let closePage = document.getElementById("close");
 let popUpSite = document.getElementById("siteFullScreen");
+let background = document.getElementById("background");
+let menuPhotography = document.getElementById("menuPhotography");
+let menuProjects = document.getElementById("menuProjects");
+let menuResume = document.getElementById("menuResume");
 
 
 let userLang = navigator.language || navigator.userLanguage;
 let siteLanguage = null;
-
-
 
 /**
  * Display the correct language which the user picked
@@ -22,10 +23,8 @@ let siteLanguage = null;
  */
 const updateSiteLanguage = lang => {
   fetch('./translations.json')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(myJson) {
+    .then((response) => response.json())
+    .then((myJson) => {
       Object.keys(myJson).forEach(textField => {
         let transField = document.getElementById(textField);
         if(transField != null) transField.innerHTML = myJson[textField][lang];
@@ -69,7 +68,7 @@ pickEnglish.addEventListener("click", e => {
 
 //Title animation Typed.js
 const TYPED = new Typed('#typed', {
-  strings: ['CODER', 'WEB DEVELOPER', '📷-grapher'],
+  strings: ['CODER', 'WEB DEVELOPER'],
   typeSpeed: 110,
   backDelay: 3000,
   backSpeed: 40,
@@ -77,18 +76,36 @@ const TYPED = new Typed('#typed', {
 });
 
 /**
+ * Is fullscreen mode?
+ * @return {[boolean]} [true = fullscreen, false = not fullscreen]
+ */
+const isFullscreen = () => {
+  if (
+    document.fullscreenElement || /* Standard syntax */
+    document.webkitFullscreenElement || /* Chrome, Safari and Opera syntax */
+    document.mozFullScreenElement ||/* Firefox syntax */
+    document.msFullscreenElement /* IE/Edge syntax */
+  ) { return true; }
+  return false;
+};
+
+
+/**
  * Leave fullscreen mode
  * @return {[type]} [null]
  */
 const exitFullscreen = () => {
-  if(document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if(document.mozCancelFullScreen) {
-    document.mozCancelFullScreen();
-  } else if(document.webkitExitFullscreen) {
-    document.webkitExitFullscreen();
+  if(isFullscreen()) {
+    if(document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if(document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if(document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+    popUpSite.classList.remove('big');
   }
-  popUpSite.classList.toggle("popUpSiteClose");
+  popUpSite.classList.remove("popUpSiteOpen");
 };
 
 /**
@@ -107,11 +124,39 @@ const enterFullscreen = (element) => {
     element.webkitRequestFullscreen();
   }
   //Add exit page functionality
-  closePage.addEventListener("click", () => {
+  document.getElementById("close").addEventListener("click", () => {
     exitFullscreen();
-  });
+  }, true);
 };
 
+/**
+ * Load subpages and add close button and translate it to the current site language
+ * @param  {[string]} file [Filename with filetype]
+ * @return {[type]}      [null]
+ */
+const loadSubPage = file => {
+  fetch('./' + file)
+    .then((response) => response.text())
+    .then((subpage) => {
+      popUpSite.innerHTML = subpage;
+      popUpSite.classList.add("popUpSiteOpen");
+      document.getElementById("close").addEventListener("click", () => {
+        exitFullscreen();
+      });
+      updateSiteLanguage(siteLanguage);
+    });
+};
 
-//Show entire DOM
-enterFullscreen(document.body);
+menuPhotography.addEventListener("click", () => {
+  popUpSite.classList.add('big');
+  loadSubPage("photography.html");
+  enterFullscreen(document.body);
+});
+
+menuProjects.addEventListener("click", () => {
+  loadSubPage("projects.html");
+});
+
+menuResume.addEventListener("click", () => {
+  loadSubPage("resume.html");
+});

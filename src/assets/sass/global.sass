@@ -5,12 +5,6 @@
 /*
 
 
-body:fullscreen
-  animation: fadeIn 500ms ease normal alternate
-
-body:fullscreen #background
-  display: block
-
 html, body
   padding: 0
   margin: 0
@@ -20,7 +14,16 @@ html, body
   position: relative
   font-family: "Segoe UI", sans-serif
   color: $fontColor
-  background-color: $firstBackground
+  overflow-x: hidden
+
+  &::before
+    content: ""
+    position: absolute
+    width: 100%
+    height: 100%
+    background-image: url("../images/background.png")
+    opacity: .018
+    z-index: -10
 
   .align
     text-align: center
@@ -81,25 +84,101 @@ html, body
     margin: 0 auto
     bottom: 0
     height: calc( 100% - 95px )
-    max-width: 1920px
+    width: 100%
+    max-width: 1700px
+    overflow-y: hidden
+    left: 50%
+    transform: translateX(-50%)
+
+    .menuTree
+      width: 100%
+      height: 100%
+      bottom: -5px
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+
+      #ScreenBackground
+        height: 100%
+        width: 100%
+        bottom: -5px
+        opacity: .65
+        position: absolute
+
+      nav
+        position: absolute
+        width: 100%
+        height: 100%
+
+        a
+          display: block
+          width: 11rem
+          height: 11rem
+          transition: 0.5s
+          text-decoration: none
+          color: $fontColor
+
+          img
+            width: 11rem
+            height: 11rem
+
+          &:hover
+            cursor: pointer
+            transform: translateY(-10px)
+
+        #menuGithub, h3
+          position: absolute
+          bottom: 10%
+          left: 7%
+
+        #menuResume, h3
+          position: absolute
+          bottom: 65%
+          left: 20%
+
+        #menuProjects, h3
+          position: absolute
+          bottom: 40%
+          left: 50%
+          transform: translateX(-50%)
+
+        #menuProjects:hover
+            transform: translate(-50%, -10px)
+
+        #menuPhotography, h3
+          position: absolute
+          bottom: 65%
+          right: 20%
+
+        #menuLinkedIn, h3
+          position: absolute
+          bottom: 10%
+          right: 7%
+
+        h3
+          transform: translate(-50%, 5%)
+          text-align: center
+
+        #menuPhotography h3
+          transform: translate(-72%, -15%)
 
   #background
     display: none
     width: 100%
-    height: 100%
+    bottom: 0
     top: 0
-    left: 0
-    position: absolute
+    position: inherit
     background-color: rgba(#222, .5)
+    pointer-events: none
 
   .popUpSite
-    display: block
+    display: none
     position: absolute
-    width: 130vh
+    width: 47%
     top: 0
     left: 50%
     transform: translateX(-50%)
-    min-height: 85vh
+    min-height: 92vh
     margin: 35px 50px
     border-radius: 0 0 5px 5px
     box-shadow: 1px 3px 10px 0px $fontColor
@@ -151,19 +230,35 @@ html, body
           &:nth-child(2)
             transform: rotate(-45deg)
 
+    #resume
+      background-color: rgba(#F6BE16, .78)
+
+    #projects
+      background-color: rgba(#56BEA5, .78)
+
+    #photography
+      background-color: rgba(#F8992F, .78)
+
     .siteContent
       padding: 10px
       box-sizing: border-box
 
+      #cv
+        position: absolute
+        top: 75px
+        left: 0
+        width: 100%
+        height: calc( 100% - 78px )
+
     .siteContentPhoto
-      padding: 40px 80px
+      padding: 120px 160px
 
       .photographyGrid
         display: grid
         grid-template-columns: 1fr 1fr 1fr
         grid-template-rows: 1fr 1fr 1fr
         grid-template-areas: ". . ." ". . ." ". . ."
-        grid-gap: 70px
+        grid-gap: 160px
         margin: 25px auto
 
         .photography_imageItem
@@ -197,9 +292,11 @@ html, body
         @for $i3 from 7 through 9
           .imageItem#{$i3} { animation-delay: 200ms * ( $i3 - 6 ) + 400ms; }
 
-  .popUpSiteClose
-    display: none
+  .popUpSiteOpen
+    display: block
 
+  .big
+    width: 80vw
 
 @keyframes fadeIn
   from
@@ -218,7 +315,90 @@ html, body
   100%
     transform: scale(1)
 
+body:fullscreen #background
+  display: block
+  background-color: #fff
+  z-index: -10
+
+  &::before
+    content: ""
+    position: absolute
+    width: 100%
+    height: 100%
+    background-image: url("../images/background.png")
+    opacity: .03
+    z-index: -10
+
+body:fullscreen
+  overflow: scroll !important
+
+body:-ms-fullscreen
+  overflow: scroll !important
+
+body:-webkit-full-screen
+  overflow: scroll !important
+
+body:-moz-full-screen
+  overflow: scroll !important
 
 /* ########################################
       Media Queries
 /*
+
+@media only screen and (max-width: 1024px)
+
+  body
+    font-size: 12px
+
+    .menuTree nav
+      height: 90% !important
+      bottom: 0
+
+      a, img
+        width: 8rem !important
+        height: 8rem !important
+
+  #ScreenBackground
+    object-fit: cover
+
+@media only screen and (max-width: 500px)
+
+  body
+    font-size: 9px
+
+    .menuTree nav
+      height: 80% !important
+      bottom: 0
+
+      a, img
+        width: 8rem !important
+        height: 8rem !important
+
+      #menuResume
+        left: 10% !important
+
+      #menuPhotography
+        right: 10% !important
+
+    #ScreenBackground
+      object-fit: cover
+
+@media only screen and (max-height: 500px)
+
+  body
+    font-size: 11px
+
+    .header
+
+      .align span
+        font-size: 25px !important
+
+      .align
+        position: absolute
+        top: 0
+        margin: 20px auto
+        left: 50%
+        transform: translateX(-50%)
+
+    #ScreenBackground
+      object-fit: cover
