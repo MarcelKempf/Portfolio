@@ -36,7 +36,19 @@
     "en": "LinkedIn"
   },
   "resume_Pdf": {
-    "de": "<object id='cv' data='CVMarcel_DE.pdf'></object>",
-    "en": "<object id='cv' data='CVMarcel_EN.pdf'></object>"
+    "de": "<object id='cv' type='application/pdf' data='CVMarcel_EN.pdf'><p>Your web browser doesn't have a PDF plugin. Instead you can <a href='./CVMarcel_DE.pdf'>click here to download the PDF file.</a></p></object>",
+    "en": "<object id='cv' type='application/pdf' data='CVMarcel_EN.pdf'><p>Your web browser doesn't have a PDF plugin. Instead you can <a href='./CVMarcel_EN.pdf'>click here to download the PDF file.</a></p></object>"
+  },
+  "descriptionGDPR" : {
+    "de": "DSGVO Opt-In und Opt-Out. Die implementation funktioniert mit HTML data tags.",
+    "en": "GDPR Opt-In and Opt-Out. The implementation works with HTML data tags."
+  },
+  "descriptionPortfolio" : {
+    "de": "Dieses Portfolio! Das Ziel war eine etwas andere Seite zu erstellen und nicht oft genutzte Funktionen einzubinden wie zum Bespiel Vollbildmodus und Sass control directives",
+    "en": "This Portfolio! The goal was to create something different and the usage of not often used functions like fullscreen and Sass control directives"
+  },
+  "titleGDPR" : {
+    "de": "DSGVO Opt-in und Opt-out Plugin",
+    "en": "GDPR Opt-in and Opt-out Plugin"
   }
 }
