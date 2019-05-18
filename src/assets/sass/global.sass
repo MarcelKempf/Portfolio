@@ -129,39 +129,45 @@ html, body
 
         #menuGithub, h3
           position: absolute
-          bottom: 10%
-          left: 7%
+          bottom: 20%
+          left: 10%
 
         #menuResume, h3
           position: absolute
-          bottom: 65%
-          left: 20%
+          bottom: 50%
+          left: 30%
 
-        #menuProjects, h3
+        #menuPhotography, h3
           position: absolute
           bottom: 40%
           left: 50%
           transform: translateX(-50%)
 
-        #menuProjects:hover
+        #menuPhotography
+          display: none
+
+        #menuPhotography:hover
             transform: translate(-50%, -10px)
 
-        #menuPhotography, h3
+        #menuProjects, h3
           position: absolute
-          bottom: 65%
-          right: 20%
+          bottom: 50%
+          right: 30%
 
         #menuLinkedIn, h3
           position: absolute
-          bottom: 10%
-          right: 7%
+          bottom: 20%
+          right: 10%
 
         h3
-          transform: translate(-50%, 5%)
+          transform: translate(-50%, 75%)
           text-align: center
 
         #menuPhotography h3
-          transform: translate(-72%, -15%)
+          transform: translate(-75%, -15%)
+
+        #menuTitle_cv
+          width: 100%
 
   #background
     display: none
@@ -175,7 +181,8 @@ html, body
   .popUpSite
     display: none
     position: absolute
-    width: 47%
+    width: 52%
+    max-width: 1300px
     top: 0
     left: 50%
     transform: translateX(-50%)
@@ -247,7 +254,7 @@ html, body
 
       .projectImg
         width: 30%
-        height: 30%
+        height: auto
 
       .description
         position: absolute
@@ -259,14 +266,31 @@ html, body
         .linkButtons
           float: right
 
+        .tag
+          pointer-events: none
+
         .linkTag, .tag
+          display: inline-block
           border-radius: 3px
-          padding: 0 0.5rem
+          margin: 0.3rem 0.2rem
+          padding: 0.2rem 0.5rem
           text-decoration: none
           color: $fontColor
           background: $secondBackground
 
+
+          .linkImg
+            height: 1rem
+            margin: auto 0.3rem auto 0
+
+        .linkTag
+          display: inline-flex
+
+          &:hover
+            background-color: darken( $secondBackground, 5% )
+
     .siteContent
+      display: contents
       padding: 10px
       box-sizing: border-box
 
@@ -320,7 +344,7 @@ html, body
           .imageItem#{$i3} { animation-delay: 200ms * ( $i3 - 6 ) + 400ms; }
 
   .popUpSiteOpen
-    display: block
+    display: grid
 
   .big
     width: 80vw
@@ -399,7 +423,7 @@ body:-moz-full-screen
 @media only screen and (max-width: 500px)
 
   body
-    font-size: 9px
+    font-size: 11px
 
     .menuTree nav
       height: 80% !important
@@ -412,7 +436,10 @@ body:-moz-full-screen
       #menuResume
         left: 10% !important
 
-      #menuPhotography
+      //#menuPhotography
+      //  right: 10% !important
+
+      #menuProjects
         right: 10% !important
 
     #ScreenBackground
@@ -426,7 +453,7 @@ body:-moz-full-screen
 @media only screen and (max-height: 500px)
 
   body
-    font-size: 11px
+    font-size: 12px
 
     .header
 
