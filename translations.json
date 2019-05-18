@@ -36,8 +36,8 @@
     "en": "LinkedIn"
   },
   "resume_Pdf": {
-    "de": "<object id='cv' type='application/pdf' data='CVMarcel_EN.pdf'><p>Your web browser doesn't have a PDF plugin. Instead you can <a href='./CVMarcel_DE.pdf'>click here to download the PDF file.</a></p></object>",
-    "en": "<object id='cv' type='application/pdf' data='CVMarcel_EN.pdf'><p>Your web browser doesn't have a PDF plugin. Instead you can <a href='./CVMarcel_EN.pdf'>click here to download the PDF file.</a></p></object>"
+    "de": "<object id='cv' type='application/pdf' data='CVMarcel_EN.pdf'><p>Your web browser doesn't have a PDF plugin. Instead you can <a href='CVMarcel_DE.pdf'>click here to download the PDF file.</a></p></object>",
+    "en": "<object id='cv' type='application/pdf' data='CVMarcel_EN.pdf'><p>Your web browser doesn't have a PDF plugin. Instead you can <a href='CVMarcel_EN.pdf'>click here to download the PDF file.</a></p></object>"
   },
   "descriptionGDPR" : {
     "de": "DSGVO Opt-In und Opt-Out. Die implementation funktioniert mit HTML data tags.",
@@ -46,6 +46,10 @@
   "descriptionPortfolio" : {
     "de": "Dieses Portfolio! Das Ziel war eine etwas andere Seite zu erstellen und nicht oft genutzte Funktionen einzubinden wie zum Bespiel Vollbildmodus und Sass control directives",
     "en": "This Portfolio! The goal was to create something different and the usage of not often used functions like fullscreen and Sass control directives"
+  },
+  "descriptionPizzaOrderSystem" : {
+    "de": "Auf dieser Webseite kann man seine eigene Pizza kreieren und bestellen. Bei diesem Projekt geht es um die Umsetzung mit React und die Benutzung von Routing, State, Components, Props und Events.",
+    "en": "On this website you can create and order your own pizza. This project is about the implementation with React and the use of routing, state, props, components and events. "
   },
   "titleGDPR" : {
     "de": "DSGVO Opt-in und Opt-out Plugin",
