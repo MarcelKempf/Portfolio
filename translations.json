@@ -36,7 +36,7 @@
     "en": "LinkedIn"
   },
   "resume_Pdf": {
-    "de": "<object id='cv' type='application/pdf' data='CVMarcel_EN.pdf'><p>Your web browser doesn't have a PDF plugin. Instead you can <a href='CVMarcel_EN.pdf'>click here to download the PDF file.</a></p></object>",
+    "de": "<object id='cv' type='application/pdf' data='CVMarcel_DE.pdf'><p>Your web browser doesn't have a PDF plugin. Instead you can <a href='CVMarcel_EN.pdf'>click here to download the PDF file.</a></p></object>",
     "en": "<object id='cv' type='application/pdf' data='CVMarcel_EN.pdf'><p>Your web browser doesn't have a PDF plugin. Instead you can <a href='CVMarcel_EN.pdf'>click here to download the PDF file.</a></p></object>"
   },
   "descriptionGDPR" : {
